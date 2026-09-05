@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Victor Oyebode | Web & Graphic Designer</title>
+
+  <style>
+    /* =========================
+       GLOBAL STYLES
+    ========================== */
+    :root {
+      --bg: #0D0F12;
+      --card: #16191E;
+      --card-hover: #1D2128;
+      --accent: #E67E22;
+      --accent-dark: #C96A16;
+      --text: #FFFFFF;
+      --muted: #A8ADB7;
+      --border: #2A2E35;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-tag {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 50px;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 14px 26px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      border: 1px solid var(--accent);
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(230, 126, 34, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      margin-left: 10px;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: transparent;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(13, 15, 18, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: rgba(230, 126, 34, 0.08);
+      filter: blur(100px);
+      border-radius: 50%;
+      right: -100px;
+      top: 100px;
+    }
+
+    .hero-content {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-role {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+
+    /* Profile Image Placeholder */
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+
+    /* .image-box {
+      width: min(380px, 100%);
+      aspect-ratio: 1/1.1;
+      background:
+        linear-gradient(
+          145deg,
+          #242932,
+          #121417
+        );
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-box::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      opacity: 0.25;
+    } */
+
+    .image-box {
+  width: min(380px, 100%);
+  height: 480px;
+  background: #16191E;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 15, 18, 0.55),
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.profile-photo:hover img {
+  transform: scale(1.04);
+}vv
+
+    .profile-placeholder {
+      text-align: center;
+      color: var(--muted);
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .profile-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    .experience-badge {
+      position: absolute;
+      bottom: 30px;
+      left: -30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .experience-badge strong {
+      color: var(--accent);
+      font-size: 1.5rem;
+      display: block;
+    }
+
+
+    /* =========================
+       ABOUT / SERVICES
+    ========================== */
+
+    .services {
+      background: #101216;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 12px;
+      transition: 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      background: var(--card-hover);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      background: rgba(230, 126, 34, 0.12);
+      color: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
+    .timeline {
+      position: relative;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 70px;
+      margin-bottom: 50px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 4px solid var(--bg);
+      z-index: 2;
+    }
+
+    .timeline-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .timeline-content:hover {
+      border-color: var(--accent);
+      transform: translateX(5px);
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       PORTFOLIO
+    ========================== */
+
+    .portfolio {
+      background: #101216;
+    }
+
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 10px 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1/0.75;
+      background: var(--card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(
+          135deg,
+          #252A32,
+          #15181D
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555C66;
+      font-size: 1.1rem;
+      transition: 0.5s;
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.08);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.95),
+        rgba(0,0,0,0.15)
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      opacity: 0;
+      transition: 0.4s ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-category {
+      color: var(--accent);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .project-overlay h3 {
+      font-size: 1.3rem;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .contact-details {
+      list-style: none;
+    }
+
+    .contact-details li {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .contact-details strong {
+      display: block;
+      color: white;
+      margin-bottom: 3px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+
+    /* Contact Form */
+
+    .contact-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      background: #101216;
+      border: 1px solid var(--border);
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+      outline: none;
+      font-family: inherit;
+      transition: 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 8%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================== */
+
+    @media (max-width: 1000px) {
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        margin-top: 20px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .experience-badge {
+        left: 10px;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-container {
+        padding: 15px 6%;
+      }
+
+      .nav-cta {
+        padding: 9px 14px;
+        font-size: 0.8rem;
+      }
+
+      .portfolio-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    @media (max-width: 550px) {
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero-role {
+        font-size: 1.2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+      }
+
+      .contact-form {
+        padding: 25px 20px;
+      }
+
+      .timeline-item {
+        padding-left: 55px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="#home" class="logo">
+        V<span>O</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn nav-cta">
+        Work With Me
+      </a>
+
+    </div>
+  </nav>
+
+
+
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <p class="hero-tag">
+          Available for creative projects
+        </p>
+
+        <h1>
+          I'm <span>VICTOR</span><br>
+          OYEBODE
+        </h1>
+
+        <h2 class="hero-role">
+          Web & Graphic Designer
+        </h2>
+
+        <p class="hero-description">
+          I create modern digital experiences and strong visual identities.
+          From user-focused websites and UI/UX concepts to creative graphic
+          design, I help brands turn ideas into designs that connect,
+          communicate, and inspire.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn">
+            View My Work
+          </a>
+
+          <a href="#about" class="btn btn-outline">
+            More About Me
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+  <div class="image-box profile-photo">
+
+    <img
+      src="victor.jpg"
+      alt="Victor Oyebode - Web and Graphic Designer"
+    >
+
+  </div>
+
+  <div class="experience-badge">
+    <strong>Creative</strong>
+    Web & Graphic Design
+  </div>
+
+</div>
+<!-- 
+
+      <div class="hero-image">
+
+        <div class="image-box">
+
+          <!--
+            Replace this placeholder with your image later.
+
+            Example:
+            <img src="victor.jpg" alt="Victor Oyebode">
+          -->
+
+          <div class="profile-placeholder">
+
+            <div class="profile-icon">
+              VO
+            </div>
+
+            <h3>Victor Oyebode</h3>
+
+            <p>
+              Professional Photo
+            </p>
+
+          </div>
+
+        </div> -->
+
+
+        <div class="experience-badge">
+          <strong>Creative</strong>
+          Web & Graphic Design
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ABOUT / SERVICES
+  ========================== -->
+
+  <section class="services" id="about">
+
+    <div class="container">
+
+      <span class="section-tag">
+        What I Do
+      </span>
+
+      <h2 class="section-title">
+        Designing Experiences That Make an Impact.
+      </h2>
+
+      <p class="section-description">
+        I combine creativity, strategy, and technology to create visually
+        engaging designs and user-friendly digital experiences.
+      </p>
+
+
+      <div class="services-grid">
+
+
+        <!-- Card 1 -->
+
+        <div class="service-card">
+
+          <div class="service-icon">
+            ✦
+          </div>
+
+          <h3>
+            Creative Strategy
+          </h3>
+
+          <p>
+            Turning ideas into clear creative directions that help brands
+            communicate effectively and stand out.
+          </p>
+
+        </div>
+
+
+        <!-- Card 2 -->
+
+        <div class="service-card">
+
+          <div class="service-icon">
+            ◈
+          </div>
+
+          <h3>
+            Pixel-Perfect Web Design
+          </h3>
+
+          <p>
+            Creating responsive and visually polished websites designed for
+            modern users across every device.
+          </p>
+
+        </div>
+
+
+        <!-- Card 3 -->
+
+        <div class="service-card">
+
+          <div class="service-icon">
+            ◆
+          </div>
+
+          <h3>
+            Brand Identity & Graphic Design
+          </h3>
+
+          <p>
+            Designing memorable visual identities, social media graphics,
+            logos, and creative brand materials.
+          </p>
+
+        </div>
+
+
+        <!-- Card 4 -->
+
+        <div class="service-card">
+
+          <div class="service-icon">
+            ◎
+          </div>
+
+          <h3>
+            User-Centric Solutions
+          </h3>
+
+          <p>
+            Focusing on clarity, usability, and meaningful experiences that
+            make digital products easier to use.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       EXPERIENCE
+  ========================== -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <span class="section-tag">
+        My Journey
+      </span>
+
+      <h2 class="section-title">
+        Experience & Growth
+      </h2>
+
+      <p class="section-description">
+        A growing journey built around creativity, digital design, and
+        continuously improving my skills.
+      </p>
+
+
+      <div class="timeline">
+
+
+        <!-- Timeline Item -->
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <span class="timeline-date">
+              2026 — Present
+            </span>
+
+            <h3>
+              Freelance Web Designer
+            </h3>
+
+            <p class="company">
+              Independent / Personal Projects
+            </p>
+
+            <p>
+              Designing responsive websites and modern user interfaces while
+              developing creative solutions for personal brands and businesses.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Timeline Item -->
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <span class="timeline-date">
+              2025 — Present
+            </span>
+
+            <h3>
+              Graphic Designer
+            </h3>
+
+            <p class="company">
+              Creative Projects
+            </p>
+
+            <p>
+              Creating logos, social media designs, brand visuals, and other
+              graphic materials focused on strong communication and style.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Timeline Item -->
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <span class="timeline-date">
+              The Beginning
+            </span>
+
+            <h3>
+              Creative & Design Journey
+            </h3>
+
+            <p class="company">
+              Continuous Learning
+            </p>
+
+            <p>
+              Started exploring graphic design, web design, UI/UX principles,
+              and modern digital tools to build a strong creative foundation.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PORTFOLIO
+  ========================== -->
+
+  <section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+
+      <div class="portfolio-header">
+
+        <div>
+
+          <span class="section-tag">
+            Selected Works
+          </span>
+
+          <h2 class="section-title">
+            Recent Projects
+          </h2>
+
+        </div>
+
+
+        <div class="portfolio-filters">
+
+          <button class="filter-btn active">
+            All
+          </button>
+
+          <button class="filter-btn">
+            Web
+          </button>
+
+          <button class="filter-btn">
+            Branding
+          </button>
+
+          <button class="filter-btn">
+            Graphics
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="portfolio-grid">
+
+
+        <!-- Project 1 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Website Preview
+          </div>
+
+          <div class="project-overlay">
+
+            <span class="project-category">
+              Web Design
+            </span>
+
+            <h3>
+              Modern Business Website
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project 2 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Brand Identity Preview
+          </div>
+
+          <div class="project-overlay">
+
+            <span class="project-category">
+              Branding
+            </span>
+
+            <h3>
+              Creative Brand Identity
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project 3 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Graphic Design Preview
+          </div>
+
+          <div class="project-overlay">
+
+            <span class="project-category">
+              Graphics
+            </span>
+
+            <h3>
+              Social Media Campaign
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project 4 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            UI Design Preview
+          </div>
+
+          <div class="project-overlay">
+
+            <span class="project-category">
+              Web Design
+            </span>
+
+            <h3>
+              Dashboard Interface
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project 5 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Logo Preview
+          </div>
+
+          <div class="project-overlay">
+
+            <span class="project-category">
+              Branding
+            </span>
+
+            <h3>
+              Logo & Visual System
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project 6 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Poster Preview
+          </div>
+
+          <div class="project-overlay">
+
+            <span class="project-category">
+              Graphics
+            </span>
+
+            <h3>
+              Creative Poster Design
+            </h3>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <span class="section-tag">
+        Get In Touch
+      </span>
+
+      <h2 class="section-title">
+        Let's Work Together
+      </h2>
+
+
+      <div class="contact-wrapper">
+
+
+        <!-- Contact Information -->
+
+        <div class="contact-info">
+
+          <p>
+            Have a project, idea, or brand that needs a creative touch?
+            I'd love to hear about it and explore how we can work together.
+          </p>
+
+
+          <ul class="contact-details">
+
+            <li>
+              <strong>Email</strong>
+              your@email.com
+            </li>
+
+            <li>
+              <strong>Location</strong>
+              Nigeria
+            </li>
+
+            <li>
+              <strong>Availability</strong>
+              Available for Freelance Projects
+            </li>
+
+          </ul>
+
+
+          <div class="social-links">
+
+            <a href="#" aria-label="LinkedIn">
+              in
+            </a>
+
+            <a href="#" aria-label="Behance">
+              Be
+            </a>
+
+            <a href="#" aria-label="Dribbble">
+              Dr
+            </a>
+
+            <a href="#" aria-label="GitHub">
+              GH
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Contact Form -->
+
+        <form class="contact-form">
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <input
+                type="text"
+                placeholder="Your Name"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <input
+              type="text"
+              placeholder="Subject"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <textarea
+              placeholder="Tell me about your project..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button type="submit" class="btn">
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 <span>Victor Oyebode</span>.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
